@@ -1,0 +1,43 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        ArrayList<String> list = new ArrayList<>(); // Tạo danh sách
+        
+        // Thêm một số phần tử mặc định vào danh sách
+        list.add("Phần tử 1");
+        list.add("Phần tử 2");
+        list.add("Phần tử 3");
+        
+        // Hiển thị danh sách ban đầu
+        System.out.println("Danh sách ban đầu: " + list);
+        
+        // Thêm phần tử vào vị trí chỉ định
+        System.out.print("Nhập vị trí bạn muốn thêm phần tử: ");
+        int indexAdd = scanner.nextInt();
+        scanner.nextLine(); // Đọc bỏ dòng mới còn sót lại
+        
+        System.out.print("Nhập nội dung phần tử mới: ");
+        String newElement = scanner.nextLine();
+        
+        if (indexAdd >= 0 && indexAdd <= list.size()) {
+            list.add(indexAdd, newElement);
+            System.out.println("Danh sách sau khi thêm phần tử: " + list);
+        } else {
+            System.out.println("Vị trí không hợp lệ.");
+        }
+        
+        // Xóa phần tử tại vị trí chỉ định
+        System.out.print("Nhập vị trí bạn muốn xóa phần tử: ");
+        int indexRemove = scanner.nextInt();
+        
+        if (indexRemove >= 0 && indexRemove < list.size()) {
+            list.remove(indexRemove);
+            System.out.println("Danh sách sau khi xóa phần tử: " + list);
+        } else {
+            System.out.println("Vị trí không hợp lệ.");
+        }
+    }
+}
